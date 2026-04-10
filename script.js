@@ -48,6 +48,9 @@ function closeMenu() {
 
 window.onpopstate = function () {
   closeMenu();
+
+  // CLOSE FORM TOO
+  document.getElementById("formBox").style.display = "none";
 };
 
 function scrollToSection(id) {
@@ -85,8 +88,28 @@ function openForm() {
     return;
   }
 
+  let total = 0;
+  let text = "<h4>Order Summary</h4>";
+
+  selectedItems.forEach(item => {
+    total += item.price;
+    text += `<p>${item.name} - ₦${item.price}</p>`;
+  });
+
+  text += `<p>Delivery - ₦1000</p>`;
+  text += `<b>Total: ₦${total + 1000}</b>`;
+
+  document.getElementById("summary").innerHTML = text;
+  document.getElementById("totalPrice").innerText = total + 1000;
+
   document.getElementById("formBox").style.display = "block";
+
+  // 👇 THIS SCROLLS USER TO FORM (VERY IMPORTANT UX FIX)
+  document.getElementById("formBox").scrollIntoView({
+    behavior: "smooth"
+  });
 }
+
 
 window.onload = function () {
   let btn = document.querySelector(".order-btn");
@@ -98,6 +121,9 @@ window.onload = function () {
     // DO NOT remove onclick — we still want alert
     btn.style.cursor = "not-allowed";
   }
+  window.scrollTo(0, 0); // always start from top
+
+  document.getElementById("formBox").style.display = "none"; // hide form on load
 };
 
 if (checkStoreStatus() === "closed") {
@@ -111,8 +137,6 @@ if (checkStoreStatus() === "closed") {
 
   document.body.prepend(banner);
 }
-
-  document.getElementById("formBox").style.display = "block";
 
   let total = 0;
   let text = "<h4>Order Summary</h4>";
@@ -148,5 +172,5 @@ function sendOrder() {
 
   message += `Total: ₦${total}`;
 
-  window.open(`https://wa.me/234XXXXXXXXXX?text=${message}`);
+  window.open(`https://wa.me/2349031576717?text=${message}`);
 }
