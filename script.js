@@ -101,7 +101,7 @@ window.onload = function () {
 function sendOrder() {
   alert("⚠️ Please pay the exact total amount to the account above and take a screenshot of your payment.\nYou will send it on WhatsApp after placing your order. Orders without proof of payment will not be processed.");
 
-  let name = document.getElementById("full-name").value;
+  let name = document.getElementById("name").value;
   let hostel = document.getElementById("hostel").value;
   let dept = document.getElementById("dept").value;
 
