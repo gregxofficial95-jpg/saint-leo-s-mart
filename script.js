@@ -1,5 +1,3 @@
-alert("Should you require any item not currently available on our website, \n kindly contact us via whatsapp number to place a special order.\n Additionally we offer a full delivery service from vendors around the school available for a delivery fee of N1000.");
-
 let selectedItems = [];
 
 function toggleItem(el, name, price) {
@@ -27,6 +25,10 @@ function openFAQ() {
 
 function contactUs() {
   window.open("https://wa.me/2349125366748?text=Hello%20I%20need%20help");
+}
+
+function closeNotice() {
+  document.getElementById("noticeBar").style.display = "none";
 }
 
 function toggleMenu() {
@@ -99,7 +101,6 @@ window.onload = function () {
 
 
 function sendOrder() {
-  alert("⚠️ Please pay the exact total amount to the account above and take a screenshot of your payment.\nYou will send it on WhatsApp after placing your order. Orders without proof of payment will not be processed.");
 
   let name = document.getElementById("name").value;
   let hostel = document.getElementById("hostel").value;
@@ -129,6 +130,7 @@ Order:
 
   let url = "https://wa.me/2349125366748?text=" + encodeURIComponent(message);
 
-  // better for mobile
+  // 🔥 THIS is the key fix
   window.location.href = url;
 }
+
