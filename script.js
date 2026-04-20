@@ -101,7 +101,7 @@ window.onload = function () {
 function sendOrder() {
   alert("⚠️ Please pay the exact total amount to the account above and take a screenshot of your payment.\nYou will send it on WhatsApp after placing your order. Orders without proof of payment will not be processed.");
 
-  let name = document.getElementById("name").value;
+  let name = document.getElementById("full-name").value;
   let hostel = document.getElementById("hostel").value;
   let dept = document.getElementById("dept").value;
 
@@ -111,15 +111,24 @@ function sendOrder() {
   }
 
   let total = 2750;
-  let message = `Hi Saint Leo's Mart 👋%0AName: ${name}%0AHostel: ${hostel}%0ADept: ${dept}%0AOrder:%0A`;
+  let message = `Hi Saint Leo's Mart 👋
+
+Name: ${name}
+Hostel: ${hostel}
+Dept: ${dept}
+
+Order:
+`;
 
   selectedItems.forEach(item => {
     total += item.price;
-    message += `- ${item.name} ₦${item.price}%0A`;
+    message += `- ${item.name} ₦${item.price}\n`;
   });
 
-  message += `Total: ₦${total}`;
+  message += `\nTotal: ₦${total}`;
 
-  window.open(`https://wa.me/2349125366748?text=${message}`, "_blank");
+  let url = "https://wa.me/2349125366748?text=" + encodeURIComponent(message);
+
+  // better for mobile
+  window.location.href = url;
 }
-
