@@ -3,14 +3,14 @@ alert("Should you require any item not currently available on our website, \n ki
 let selectedItems = [];
 
 function toggleItem(el, name, price) {
-  el.classList.toggle("selected");
-
   let index = selectedItems.findIndex(i => i.name === name);
 
   if (index > -1) {
-    selectedItems.splice(index, 1); // remove
+    selectedItems.splice(index, 1);
+    el.classList.remove("selected");
   } else {
-    selectedItems.push({name, price}); // add
+    selectedItems.push({name, price});
+    el.classList.add("selected");
   }
 
   document.getElementById("proceedBtn").style.display = "block";
@@ -119,3 +119,4 @@ function sendOrder() {
 
   window.open(`https://api.whatsapp.com/send?phone=2349125366748&text=${message}`);
 }
+
