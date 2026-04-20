@@ -128,7 +128,7 @@ Order:
 
   message += `\nTotal: ₦${total}`;
 
-  let url = "https://api.whatsapp.com/send?phone=2349031576717&text=" + encodeURIComponent(message);
+  let url = "https://api.whatsapp.com/send?phone=2349125366748&text=" + encodeURIComponent(message);
 
   // 🔥 THIS is the key fix
   window.location.href = url;
