@@ -99,7 +99,6 @@ window.onload = function () {
 
 
 function sendOrder() {
-
   alert("⚠️ Please pay the exact total amount to the account above and take a screenshot of your payment.\nYou will send it on WhatsApp after placing your order. Orders without proof of payment will not be processed.");
 
   let name = document.getElementById("name").value;
@@ -121,6 +120,6 @@ function sendOrder() {
 
   message += `Total: ₦${total}`;
 
-  window.open(`https://wa.me/2349031576717?text=${message}`, "_blank");
+  window.open(`https://wa.me/2349125366748?text=${message}`, "_blank");
 }
 
