@@ -106,8 +106,12 @@ function sendOrder() {
   let hostel = document.getElementById("hostel").value;
   let dept = document.getElementById("dept").value;
 
-  let total = 2750;
+  if (!name || !hostel || !dept) {
+    alert("Please fill in all details");
+    return;
+  }
 
+  let total = 2750;
   let message = `Hi Saint Leo's Mart 👋%0AName: ${name}%0AHostel: ${hostel}%0ADept: ${dept}%0AOrder:%0A`;
 
   selectedItems.forEach(item => {
@@ -117,6 +121,6 @@ function sendOrder() {
 
   message += `Total: ₦${total}`;
 
-  window.open(`https://api.whatsapp.com/send?phone=2349125366748&text=${message}`);
+  window.open(`https://wa.me/2349031576717?text=${message}`, "_blank");
 }
 
