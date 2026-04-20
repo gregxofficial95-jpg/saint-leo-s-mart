@@ -97,32 +97,18 @@ window.onload = function () {
 };
 
 
-  let total = 0;
-  let text = "<h4>Order Summary</h4>";
-
-  selectedItems.forEach(item => {
-    total += item.price;
-    text += `<p>${item.name} - ₦${item.price}</p>`;
-  });
-
-  text += `<p>Delivery+Service charge - ₦2750</p>`;
-  text += `<b>Total: ₦${total + 2750}</b>`;
-
-  document.getElementById("summary").innerHTML = text;
-
-
-document.getElementById("totalPrice").innerText = total;
 
 function sendOrder() {
 
-  alert("⚠️ Please pay the exact total amount to the account above and take a screenshot of your payment.\n You will be required to send it on WhatsApp after placing your order. Orders without proof of payment will not be processed.");
+  alert("⚠️ Please pay the exact total amount to the account above and take a screenshot of your payment.\nYou will send it on WhatsApp after placing your order. Orders without proof of payment will not be processed.");
 
   let name = document.getElementById("full-name").value;
   let hostel = document.getElementById("hostel").value;
   let dept = document.getElementById("dept").value;
 
   let total = 2750;
-  let message = `Hi Saint Leo's Mart 👋%0AName: ${full-name}%0AHostel: ${hostel}%0ADept: ${dept}%0AOrder:%0A`;
+
+  let message = `Hi Saint Leo's Mart 👋%0AName: ${name}%0AHostel: ${hostel}%0ADept: ${dept}%0AOrder:%0A`;
 
   selectedItems.forEach(item => {
     total += item.price;
