@@ -60,6 +60,23 @@ padding: 60px 20px;
   padding: 10px;
 }
 
+.notice {
+  background: #2B0A02;
+  color: #D4A373;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.notice button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+} 
 .item {
   background: #FFFFFF;
   border: #E8DCD3;
