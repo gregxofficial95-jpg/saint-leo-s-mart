@@ -26,7 +26,7 @@ function openFAQ() {
 }
 
 function contactUs() {
-  window.open("https://wa.me/2349031576717?text=Hello%20I%20need%20help");
+  window.open("https://wa.me/2349125366748?text=Hello%20I%20need%20help");
 }
 
 function toggleMenu() {
@@ -117,5 +117,5 @@ function sendOrder() {
 
   message += `Total: ₦${total}`;
 
-  window.open(`https://api.whatsapp.com/send?phone=2349031576717&text=${message}`);
+  window.open(`https://api.whatsapp.com/send?phone=2349125366748&text=${message}`);
 }
